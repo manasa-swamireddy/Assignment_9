@@ -1,0 +1,53 @@
+\documentclass[border=3mm]{standalone}
+
+\usepackage{circuitikz}
+\usetikzlibrary{arrows,shapes.gates.logic.US,shapes.gates.logic.IEC,calc}
+
+\begin{document}
+
+\thispagestyle{empty}
+\tikzstyle{branch}=[fill,shape=circle,minimum size=3pt,inner sep=0pt]
+\begin{tikzpicture}[label distance=2mm]
+
+\node (x3) at (0,0);
+   \node[not gate US, draw, rotate=-90] at ($(x3)+(3.5,-2.8)$) (Not2) {};
+
+   \draw (0,0)--(1.5,-0.5)
+   (1.5,-0.5)--(1.5,-3)
+   (1.5,-3)--(0,-3.5)
+   (0,-3.5)--(0,0)
+   (0,-1.2)--(-1,-1.2)
+   (0,-2.5)--(-1,-2.5)
+   (0.8,-3.2)--(0.8,-4)
+   (-1.2,-1.2)node[american] {$Y$}
+   (-1.2,-2.5)node[american] {$0$}
+   (0.8,-4.19)node[american] {$X$}
+   (0.15,-1.2)node[american] {$0$}
+   (0.15,-2.5)node[american] {$1$}
+   (0.7,-1.75)node[american] {$MUX$}
+   
+   
+   (1.5,-1.75)--(5,-1.75)
+   (3.5,-1.75)--(3.5,-2.65)
+   (Not2.output)--(3.5,-4)
+   (3.5,-4)--(5,-4)
+   (5,-1)--(5,-4.8)
+   (5,-1)--(6.5,-1.5)
+   (5,-4.8)--(6.5,-4.3)
+   (6.5,-1.5)--(6.5,-4.3)
+   (5.15,-4)node[american] {$1$}
+   (5.15,-1.75)node[american] {$0$}
+    (5.8,-2.8)node[american] {$MUX$}
+    (6.5,-2.8)--(7.5,-2.8)
+    (9.7,-2.8)node[american] {$F=X'YZ'+XZ+Y'Z$}
+    (5.7,-4.59)--(5.7,-5.6)
+    (5.7,-5.8)node[american] {$Z$}
+    (2.1,-1.45)node[american] {$X'Y$}
+    (4.2,-3.7)node[american] {$\overline{X'Y}$}
+    
+  
+    
+
+\end{tikzpicture}
+
+\end{document}
